@@ -51,7 +51,7 @@ class ApplicationDetailedSummary(object):
 
         # waiting block for all the application to get completed
         while len(apps_to_be_processed) != 0:
-            for app_name in apps_to_be_processed.keys():
+            for app_name in apps_to_be_processed:
                 try:
                     apps_to_be_processed[app_name].task.get(STATUS_INTERVAL) #
                     del apps_to_be_processed[app_name]
